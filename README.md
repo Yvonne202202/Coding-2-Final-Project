@@ -52,34 +52,6 @@ void testApp::audioOut( float * output, int bufferSize, int nChannels ) {
     phase += 0.001 * myFreq;
   }
 }
-```
-*  Sets up a maxiClock object called 'myClock'.The clock speed is set to 120 by using setTempo(). And the number of beats is set to 4 by setTicksPerBeat().
-```
-  myClock.setTempo(120);
-  myClock.setTicksPerBeat(4);
-```
-* The maxiClock system is also used. Run a test with a conditional statement to see if there is a clock tick. Call ticker() inside the play() function to advance the clock.
-The song() function is created and the conditional statement and modulus % are used in it to produce a more interesting rhythm.
-```
-     function song()
-     {
-        var out = 0;
-        myClock.ticker();
-        if( myClock.tick && myClock.playHead%beatPlay===0)
-        {
-           loop.trigger();
-        }
-    
-        if(myClock.tick && parseInt(loopPlay/64)===1){
-      
-           beat.trigger();
-        }
-        if(myClock.tick && myClock.playHead%chordPlay===4){
-      
-           chord.trigger();
-        }
-      }
- ```
 
 ## 3D Graphics
 Basic perspective projection is used. 
