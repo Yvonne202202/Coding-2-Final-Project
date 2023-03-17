@@ -4,7 +4,7 @@ Video: https://youtu.be/K9YVOPnNaD0
 ![IMAGE.png](https://github.com/Yvonne202202/Coding-2-Final-Project/blob/f9d2a6a9ef5a525490000f14a150036c350b7f4e/IMAGE.png)
 
 ## Project brief
-The project incorporates technology from Sound and Signal processing and 3D graphics. The 3D graphics engine was created using a simple 2D drawing context.
+In this project, I combined OpenFrameworks and Arduino to control the image and sound through an ultrasonic sensor. In the part of sound, I used ofxMaxim library and combined the sound and signal processing techniques learned last semester. For the visual part, I generate two balls using class inheritance.
 
 ## Sound Part
 * Maximilian library is used.
