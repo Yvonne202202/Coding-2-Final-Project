@@ -1,7 +1,7 @@
 # Coding-2-Final-Project: Engine
 
 Video: https://youtu.be/K9YVOPnNaD0
-![coding1.png](https://github.com/Yvonne202202/Coding1/blob/a6eaec6308d069bc687b76fc5bb51390ed312a01/coding1.png)
+![IMAGE.png](https://github.com/Yvonne202202/Coding-2-Final-Project/blob/f9d2a6a9ef5a525490000f14a150036c350b7f4e/IMAGE.png)
 
 ## Project brief
 The project incorporates technology from Sound and Signal processing and 3D graphics. The 3D graphics engine was created using a simple 2D drawing context.
