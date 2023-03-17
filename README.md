@@ -7,7 +7,7 @@ Video: https://youtu.be/K9YVOPnNaD0
 In this project, I combined OpenFrameworks and Arduino to control the image and sound through an ultrasonic sensor. In the part of sound, I used ofxMaxim library and combined the sound and signal processing techniques learned last semester. For the visual part, I generate two balls using class inheritance.
 
 ## Sound Part
-* Maximilian library is used.
+* ofxMaxim library is used.
 * Three maxiSample objects are created using the Maximilian library, which are beat, loop, and chord. 
 ```
   audio.loadSample('loop.wav',loop);
