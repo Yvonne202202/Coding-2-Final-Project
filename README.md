@@ -18,10 +18,20 @@ In this project, I combined OpenFrameworks and Arduino to control the image and 
 ```
  distance = serial.readByte();
 ```
-*  Sets up a maxiClock object called 'myClock'.The clock speed is set to 120 by using setTempo(). And the number of beats is set to 4 by setTicksPerBeat().
+*  I control the appearance of the two balls by the distance.
 ```
-  myClock.setTempo(120);
-  myClock.setTicksPerBeat(4);
+ void RandomBall::interact(int distance)
+{
+    step = ofMap(distance,0,255,3,20);
+    radius = ofMap(distance,0,255,4,15);
+}
+```
+```
+ void NoiseBall::interact(int distance)
+{
+    range = ofMap(distance,0,255,0.5,1.5);
+    radius = ofMap(distance,0,255,5,200);
+}
 ```
 * The maxiClock system is also used. Run a test with a conditional statement to see if there is a clock tick. Call ticker() inside the play() function to advance the clock.
 The song() function is created and the conditional statement and modulus % are used in it to produce a more interesting rhythm.
