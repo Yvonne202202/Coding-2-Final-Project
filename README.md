@@ -8,23 +8,22 @@ In this project, I combined OpenFrameworks and Arduino to control the image and 
 
 ## Sound Part
 * ofxMaxim library is used.
-* Three maxiSample objects are created using the Maximilian library, which are beat, loop, and chord. 
-```
-  audio.loadSample('loop.wav',loop);
-  audio.loadSample('beat.wav',beat);
-  audio.loadSample('chord.wav',chord);
-```
-* The maxiSample.play() function was used to create different condition triggers and so on to manipulate the sound. 
-```
-   var loopOut = loop.playOnce(0.2)+2;
-   var beatOut = beat.play(myOsc.sinewave(0.01))*10;
-   var chordOut = chord.play(1)*0.7;
-   out = loopOut + beatOut + chordOut;
 
+* To make the sound more distinctive, the method sinewave() is used. I made the sound like an engine through constant debugging.
 ```
-* To make the sound more distinctive, the method sinewave() in maxiOsc is used. 
-```
-   var beatOut = beat.play(myOsc.sinewave(0.01))*10;
+void testApp::audioOut( float * output, int bufferSize, int nChannels ) {
+  for(int i = 0; i < bufferSize * nChannels; i += 2) {
+    float sample = sin(phase); // generating a sine wave sample
+//      myClock.ticker();
+//      if(myClock.tick)
+//      {
+//          myFreq += 1;
+//      }
+    output[i] = oscillator1.coswave(myFreq*0.5*oscillator2.sinewave(0.03))* 0.8; // writing to the left channel
+    output[i+1] = output[i]; // writing to the right channel
+    phase += 0.001 * myFreq;
+  }
+}
 ```
 *  Sets up a maxiClock object called 'myClock'.The clock speed is set to 120 by using setTempo(). And the number of beats is set to 4 by setTicksPerBeat().
 ```
