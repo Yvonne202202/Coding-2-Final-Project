@@ -6,7 +6,7 @@ Video: https://youtu.be/K9YVOPnNaD0
 ## Project brief
 In this project, I combined OpenFrameworks and Arduino to control the image and sound through an ultrasonic sensor. In the part of sound, I used ofxMaxim library and combined the sound and signal processing techniques learned last semester. For the visual part, I generate two balls using class inheritance.
 
-## serial Communication Part
+## Serial Communication Part
 * I used Arduino to read the data from the ultrasonic sensor and sent the data to OpenFrameworks using serial communication.
 ```
   duration = pulseIn(echoPin, HIGH);
