@@ -6,6 +6,45 @@ Video: https://youtu.be/K9YVOPnNaD0
 ## Project brief
 In this project, I combined OpenFrameworks and Arduino to control the image and sound through an ultrasonic sensor. In the part of sound, I used ofxMaxim library and combined the sound and signal processing techniques learned last semester. For the visual part, I generate two balls using class inheritance.
 
+## serial Communication Part
+* I used Arduino to read the data from the ultrasonic sensor and sent the data to OpenFrameworks using serial communication.
+```
+  duration = pulseIn(echoPin, HIGH);
+  // Calculating the distance
+  distance= duration*0.034/2;
+  Serial.write(distance);
+```
+* Receives serial signal at OpenFrameworks.
+```
+ distance = serial.readByte();
+```
+*  Sets up a maxiClock object called 'myClock'.The clock speed is set to 120 by using setTempo(). And the number of beats is set to 4 by setTicksPerBeat().
+```
+  myClock.setTempo(120);
+  myClock.setTicksPerBeat(4);
+```
+* The maxiClock system is also used. Run a test with a conditional statement to see if there is a clock tick. Call ticker() inside the play() function to advance the clock.
+The song() function is created and the conditional statement and modulus % are used in it to produce a more interesting rhythm.
+```
+     function song()
+     {
+        var out = 0;
+        myClock.ticker();
+        if( myClock.tick && myClock.playHead%beatPlay===0)
+        {
+           loop.trigger();
+        }
+    
+        if(myClock.tick && parseInt(loopPlay/64)===1){
+      
+           beat.trigger();
+        }
+        if(myClock.tick && myClock.playHead%chordPlay===4){
+      
+           chord.trigger();
+        }
+      }
+ ```
 ## Sound Part
 * ofxMaxim library is used.
 
