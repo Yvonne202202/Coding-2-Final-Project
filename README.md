@@ -9,7 +9,7 @@ In this project, I combined OpenFrameworks and Arduino to control the image and 
 ## Sound Part
 * ofxMaxim library is used.
 
-* To make the sound more distinctive, the method sinewave() is used. I made the sound like an engine through constant debugging.
+* To make the sound more distinctive, the method sinewave() in maxiOsc is used. I made the sound like an engine through constant debugging.
 ```
 void testApp::audioOut( float * output, int bufferSize, int nChannels ) {
   for(int i = 0; i < bufferSize * nChannels; i += 2) {
