@@ -14,7 +14,7 @@ I first defined the parent class Ball. The parent class has properties such as t
     pos.set(_x, _y);
     color = _color;
 ```
-I then created the subclasses RandomBall and NoiseBall. To make the ball in RandomBall have a random trajectory, I define a new attribute step in the subclass to generate its trajectory.
+I created the subclasses RandomBall and NoiseBall. To make the ball in RandomBall have a random trajectory, I define a new attribute step in the subclass to generate its trajectory. And I gave a new property range to NoiseBall to control the sound of the ball.
 ```
 void RandomBall::update()
 {
@@ -32,6 +32,10 @@ void RandomBall::update()
         pos.y -= step;
     checkEdge();
 }
+
+```
+```
+  range = ofMap(distance,0,255,0.5,5);
 
 ```
 ## Serial Communication Part
