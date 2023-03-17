@@ -82,7 +82,7 @@ void testApp::audioOut( float * output, int bufferSize, int nChannels ) {
 }
 ```
 ## The challenges of development projects
-In the sound part I I would have liked to use ticker() to advance the clock, but after trying it I don't think it works as well as it does now.
+In the sound part I would have liked to use ticker() to advance the clock, but after trying it I don't think it works as well as it does now.
 
 ## Future plan
 I would like to create sphere of points that move to follow the rhythm of the sound. Like changing shape to follow the beat.
