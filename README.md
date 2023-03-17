@@ -82,9 +82,7 @@ void testApp::audioOut( float * output, int bufferSize, int nChannels ) {
 }
 ```
 ## The challenges of development projects
-* The sound is sometimes distorted, which makes the mix often sound bad.
-* Different browsers load different pages due to browser compatibility issues. My project was made in Safari, and the audio that had been uploaded could not load properly when I opened the link in Google Chrome.
-* The sphere of points is so thin that it doesn't look obvious.
+In the sound part I I would have liked to use ticker() to advance the clock, but after trying it I don't think it works as well as it does now.
 
 ## Future plan
 I would like to create sphere of points that move to follow the rhythm of the sound. Like changing shape to follow the beat.
