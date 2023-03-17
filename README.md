@@ -53,42 +53,6 @@ void testApp::audioOut( float * output, int bufferSize, int nChannels ) {
   }
 }
 
-## 3D Graphics
-Basic perspective projection is used. 
-* The 3D model is a sphere of points with a ring number of 80.
-* The x, y, and z coordinates are used to create the basic 3D graphics. 
-```
-   var dim = 80; // This is the number of rings
-   // Each ring has as many points as there are rings8
-   // This is the spacing for each ring
-   var spacing = ((Math.PI * 5.5) / dim);
-   //var spacing = 200
-   //var spacing = Math.sin(dim)
-   // This is the total number of points
-   var numPoints = dim * dim;
-
-   // This is how big the sphere is.
-   var size = 500;
-```
-* CanvasRenderingContext2D.CreateRadialGradient() is used, and through in which access to the mouse parameters for interaction of graphics and the gradient effect.
-```
-      // Draw the point
-
-      // Set the size based on scaling
-        context.lineWidth = scale;
-        var grd=context.createRadialGradient(mouseX,mouseY,80,mouseX,mouseY,300);
-        grd.addColorStop(0,"#FF3399");
-        grd.addColorStop(1,"#33FFFF");
-        context.strokeStyle = grd
-        context.fillStyle = grd
-       // context.strokeStyle = "rgb(0,255,255)";
-        context.beginPath();
-        context.moveTo(x2d, y2d);
-        context.lineTo(x2d + scale, y2d);
-      
-        context.stroke();
-
-```
 ## The challenges of development projects
 * The sound is sometimes distorted, which makes the mix often sound bad.
 * Different browsers load different pages due to browser compatibility issues. My project was made in Safari, and the audio that had been uploaded could not load properly when I opened the link in Google Chrome.
