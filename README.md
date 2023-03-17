@@ -6,6 +6,34 @@ Video: https://youtu.be/K9YVOPnNaD0
 ## Project brief
 In this project, I combined OpenFrameworks and Arduino to control the image and sound through an ultrasonic sensor. In the part of sound, I used ofxMaxim library and combined the sound and signal processing techniques learned last semester. For the visual part, I generate two balls using class inheritance.
 
+## Class Inheritance
+I first defined the parent class Ball. The parent class has properties such as the color, radius, and position of the ball.
+```
+  Ball::Ball(int _x, int _y, int _radius, ofColor _color){
+    radius = _radius;
+    pos.set(_x, _y);
+    color = _color;
+```
+I then created the subclasses RandomBall and NoiseBall. To make the ball in RandomBall have a random trajectory, I define a new attribute step in the subclass to generate its trajectory.
+```
+void RandomBall::update()
+{
+    color = ofColor(120,ofRandom(120,255),ofRandom(155,255));
+    
+    // update position
+    int randomNumber = int(ofRandom(0, 4));
+    if(randomNumber == 0)
+        pos.x += step;
+    else if(randomNumber == 1)
+        pos.x += step;
+    else if(randomNumber == 2)
+        pos.y -= step;
+    else if(randomNumber == 3)
+        pos.y -= step;
+    checkEdge();
+}
+
+```
 ## Serial Communication Part
 * I used Arduino to read the data from the ultrasonic sensor and sent the data to OpenFrameworks using serial communication.
 ```
@@ -52,7 +80,7 @@ void testApp::audioOut( float * output, int bufferSize, int nChannels ) {
     phase += 0.001 * myFreq;
   }
 }
-
+```
 ## The challenges of development projects
 * The sound is sometimes distorted, which makes the mix often sound bad.
 * Different browsers load different pages due to browser compatibility issues. My project was made in Safari, and the audio that had been uploaded could not load properly when I opened the link in Google Chrome.
